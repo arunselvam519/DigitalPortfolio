@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #1A5BF0;
+    color: #E5C5B1;
+    text-align: center;
+    padding: 1em;
+}
+body{
+    background-color: #6BB5FF;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin: 0 20px;
+}
+a {
+    color:white;
+}
+.section {
+    padding: 2em;
+}
+
+.project {
+    margin: 20px;
+}
+
+footer {
+    background-color: #DF8850;
+    color: #E5C5B1;
+    text-align: center;
+    padding: 1em;
+}
+
+    </style>
+    <title>Your Name - Portfolio</title>
+</head>
+<body>
+    <header>
+        <h1> my world</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="section">
+        <h2>Welcome to My world</h2>
+        <p>Front-end Developer </p>
+    </section>
+
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <!-- Add more skills -->
+        </ul>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>sucessful developer should possess a pragmatic way of thinking,
+        able to think solution-oriented and be capable to translating into codes.</p>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="project">
+            
+            <h3>Milestone 1</h3>
+            <p>webpage using html only</p>
+        </div>
+
+        <div class="project">
+
+            <h3>Milestone 2</h3>
+            <p>webpage using html and css</p>
+        </div>
+
+        <!-- Add more projects as needed -->
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+         <p>Email:arunsel62836@gmail.com</p>
+          <p>phone number:9063725366</p>
+    </section>
+    <script>
+        // Home Section
+const homeSection = document.getElementById('home');
+
+// Skills Section
+const skillsSection = document.getElementById('skills');
+const skillsList = skillsSection.querySelector('ul');
+
+// About Section
+const aboutSection = document.getElementById('about');
+
+// Projects Section
+const projectsSection = document.getElementById('projects');
+const projectList = projectsSection.querySelectorAll('.project');
+
+// Contact Section
+const contactSection = document.getElementById('contact');
+const contactForm = document.getElementById('contact-form');
+const successMessage = document.getElementById('success-message');
+const errorMessage = document.getElementById('error-message');
+
+// Add event listeners or functionality for each section
+
+// Example: Toggle dark mode for the entire page
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-theme');
+});
+
+// Example: Display skills dynamically
+const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js'];
+skillsList.innerHTML = skills.map(skill => `<li>${skill}</li>`).join('');
+
+// Example: Show/hide a detailed project description when clicked
+projectList.forEach(project => {
+    project.addEventListener('click', () => {
+        project.classList.toggle('expanded');
+    });
+});
+
+// Example: Handle form submission in the Contact Section
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // You can add form submission logic here, e.g., send data to a server
+    // On success, show a success message; on error, show an error message
+    // You might need to customize this part depending on your setup.
+    successMessage.style.display = 'block';
+    errorMessage.style.display = 'none';
+});
+
+// Add more functionality as needed for each section.
+
+    </script>
+
+    <footer>
+        <p>&copy; 2023 my world</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
